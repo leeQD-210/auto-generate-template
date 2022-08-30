@@ -5,9 +5,10 @@ const { v2Template } = require('./templateV2')
 const chalk = require('chalk')
 const path = require('path')
 const fs = require('fs')
-const resolve = (...file) => path.resolve(__dirname, ...file)
+const resolve = (...file) => path.resolve(process.cwd(), ...file)
 const log = (message) => console.log(chalk.rgb(255, 182, 193)(`${message}`))
-const successLog = (message) => console.log(chalk.rgb(165, 247, 191)(`${message}`))
+const successLog = (message) =>
+  console.log(chalk.rgb(165, 247, 191)(`${message}`))
 const errLog = (message) => console.log(chalk.red(`${message}`))
 const generateFile = (path, data) => {
   // 判断路径文件是否存在
@@ -49,7 +50,7 @@ module.exports = {
     templateName.split('#').forEach(async (item) => {
       const inputName = item.trim().toString()
       //   组件目录路径
-      const templateDirectory = resolve(`../src/${rootDirName}`, inputName)
+      const templateDirectory = resolve(`./src/${rootDirName}`, inputName)
       if (fs.existsSync(templateDirectory)) {
         return errLog(`${inputName}文件目录已存在，请重新输入`)
       } else {
@@ -67,17 +68,29 @@ module.exports = {
       switch (templateType) {
         case 'v2':
           log(`正在生成vue2文件${resolve(templateDirectory, `index.vue`)}`)
-          await generateFile(resolve(templateDirectory, `index.vue`), v2Template(templateName))
+          await generateFile(
+            resolve(templateDirectory, `index.vue`),
+            v2Template(templateName)
+          )
           break
         case 'v3':
           log(`正在生成vue3文件${resolve(templateDirectory, `index.vue`)}`)
-          await generateFile(resolve(templateDirectory, `index.vue`), v3Template(templateName))
+          await generateFile(
+            resolve(templateDirectory, `index.vue`),
+            v3Template(templateName)
+          )
           break
         case 'react':
           //   组件文件路径
           log(`正在生成react文件${resolve(templateDirectory, `index.tsx`)}`)
-          await generateFile(resolve(templateDirectory, `index.tsx`), reactTemplate(templateName))
-          await generateFile(resolve(templateDirectory, 'style.module.less'), moduleCssTemplate(templateName))
+          await generateFile(
+            resolve(templateDirectory, `index.tsx`),
+            reactTemplate(templateName)
+          )
+          await generateFile(
+            resolve(templateDirectory, 'style.module.less'),
+            moduleCssTemplate(templateName)
+          )
           break
       }
       successLog(`模板文件创建完成`)
