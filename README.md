@@ -8,6 +8,6 @@ auto generate template file such as vue3、vue2 or react
 
  npm install chalk@4.0.0 -D 
 
- 在package.json->scripts中添加命令 'generate'：'./auto-generate-template/index'
+ 在package.json->scripts中添加命令 'generate'：'node ./auto-generate-template/index'
 
  npm run generate
