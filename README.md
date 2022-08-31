@@ -6,6 +6,6 @@ auto generate template file such as vue3、vue2 or react
 # 使用说明
  npm i auto-generate-template -D
 
- 在package.json->scripts中添加命令 'generate'：'node_modules/auto-generate-template'
+ 在package.json->scripts中添加命令 'generate'：'node node_modules/auto-generate-template'
 
  npm run generate
