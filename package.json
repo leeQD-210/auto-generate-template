@@ -1,6 +1,6 @@
 {
   "name": "auto-generate-template",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "auto generate template such as vue2,vue3,react",
   "main": "bin/index.js",
   "bin": {
