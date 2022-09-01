@@ -4,11 +4,12 @@ module.exports = {
       <template>
       <div class="${componentName}"></div>
     </template>
+    <script lang="ts">
+     export default{
+      name:'${componentName}'
+     }
+    </script>
     <script lang="ts" setup>
-    import { defineComponent } from 'vue'
-    defineComponent({
-      name: '${componentName}'
-    })
     </script>
     <style lang="less" scoped></style>
       `

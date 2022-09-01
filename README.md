@@ -1,11 +1,13 @@
 # auto-generate-template
-auto generate template file such as vue3、vue2 or react
-# 功能介绍
-自动生成vue2,vue3，react模板文件，省去开发时创建文件的烦恼
-可以根据需求在template文件中自行更改
-# 使用说明
-全局安装 install global
- npm i auto-generate-template -g
-
- 在项目根目录终端执行generate命令
- run generate at the rootDir of your project
+ 
+## description
+  -1.generate template file such as vue3、vue2 or react,meanwhile it can also generate the directory automatically
+  -2.when you need to generate batch files,its useful
+## instructions(使用说明)
+ ### install global(全局安装)
+ -1.npm i auto-generate-template -g
+ -2.run generate at the rootDir of your project(在项目根目录终端执行generate命令)
+ ### install partly(局部安装)
+ -1.npm i auto-generate-template -D
+ -2.add "generate":"node node_modules/auto-generate-template" in your package.json file at the scripts tag
+ -3.run npm run generate
