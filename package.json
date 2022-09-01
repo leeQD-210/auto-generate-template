@@ -26,13 +26,13 @@
   },
   "homepage": "https://github.com/leeQD-210/auto-generate-template#readme",
   "dependencies": {
-    "chalk": "^4.0.0",
-    "core-js": "^2.6.12"
+    "chalk": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "core-js": "^2.6.12",
     "rollup": "^2.78.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",

@@ -5,7 +5,7 @@ module.exports = {
       <div class="${componentName}"></div>
     </template>
     <script lang="ts">
-     export default{
+     export default {
       name:'${componentName}'
      }
     </script>
